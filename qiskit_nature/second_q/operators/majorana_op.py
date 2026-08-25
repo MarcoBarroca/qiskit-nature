@@ -1,6 +1,6 @@
 # This code is part of a Qiskit project.
 #
-# (C) Copyright IBM 2023, 2025.
+# (C) Copyright IBM 2023, 2026.
 #
 # This code is licensed under the Apache License, Version 2.0. You may
 # obtain a copy of this license in the LICENSE.txt file in the root directory
@@ -11,7 +11,6 @@
 # that they have been altered from the originals.
 
 """The Majorana-particle Operator."""
-
 
 from __future__ import annotations
 
@@ -24,9 +23,9 @@ import numpy as np
 
 from qiskit_nature.exceptions import QiskitNatureError
 
-from .polynomial_tensor import PolynomialTensor
-from .sparse_label_op import _TCoeff, SparseLabelOp, _to_number
 from .fermionic_op import FermionicOp
+from .polynomial_tensor import PolynomialTensor
+from .sparse_label_op import SparseLabelOp, _TCoeff, _to_number
 
 
 class MajoranaOp(SparseLabelOp):
@@ -95,7 +94,7 @@ class MajoranaOp(SparseLabelOp):
         f_op = FermionicOp({"+_0 -_1": 1}, num_spin_orbitals=2)
         m_op = MajoranaOp.from_fermionic_op(f_op)
 
-    Note that each ``FerminonicOp``-term consisting of :math:`n` expressions will result in a
+    Note that each ``FermionicOp``-term consisting of :math:`n` expressions will result in a
     ``MajoranaOp``-term consisting of :math:`2^n` expressions. The conversion uses the convention
     that
 

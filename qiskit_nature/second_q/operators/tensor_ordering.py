@@ -1,6 +1,6 @@
 # This code is part of a Qiskit project.
 #
-# (C) Copyright IBM 2022, 2023.
+# (C) Copyright IBM 2022, 2026.
 #
 # This code is licensed under the Apache License, Version 2.0. You may
 # obtain a copy of this license in the LICENSE.txt file in the root directory
@@ -35,8 +35,8 @@ from typing import TYPE_CHECKING
 
 import numpy as np
 
-from qiskit_nature import QiskitNatureError
 import qiskit_nature.optionals as _optionals
+from qiskit_nature import QiskitNatureError
 
 if TYPE_CHECKING:
     from .symmetric_two_body import SymmetricTwoBodyIntegrals
@@ -61,7 +61,7 @@ def to_chemist_ordering(
 ) -> np.ndarray | SparseArray:
     """Convert a two-body tensor to chemists' index order.
 
-    Coverts the rank-four tensor two-body tensor representing two-body integrals from
+    Converts the rank-four tensor two-body tensor representing two-body integrals from
     physicists', or intermediate, index order to chemists' index order:
     ``i,j,k,l -> i,l,j,k``
 
