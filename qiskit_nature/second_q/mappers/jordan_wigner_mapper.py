@@ -106,5 +106,4 @@ class JordanWignerMapper(FermionicMapper, ModeBasedMapper):
         """Utility to invert the order of Pauli operators in each term of a SparsePauliOp."""
         inverted_labels = [label[::-1] for label in sparse_pauli_op.paulis.to_labels()]
         # Create a new SparsePauliOp with the inverted labels but same coefficients
-        inverted_sparse_pauli_op = SparsePauliOp(inverted_labels, sparse_pauli_op.coeffs)
-        return inverted_sparse_pauli_op
+        return SparsePauliOp(inverted_labels, sparse_pauli_op.coeffs)
